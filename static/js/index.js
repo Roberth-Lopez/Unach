@@ -78,5 +78,6 @@ function boton_1(){
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  document.getElementById("mensaje").innerHTML=message.payloadString;
   }
   
