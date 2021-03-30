@@ -55,6 +55,7 @@ function boton_1(){
     console.log("Conectado...");
 	
     client.subscribe("ralopez.fie@unach.edu.ec/test");
+    client.subscribe("ralopez.fie@unach.edu.ec/test2");
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "ralopez.fie@unach.edu.ec/test1";
     client.send(message);
