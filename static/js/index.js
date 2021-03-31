@@ -77,7 +77,7 @@ function boton_1(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	if(message.sourceName == "ralopez.fie@unach.edu.ec/test"){
+	if(message.destinationName == "ralopez.fie@unach.edu.ec/test"){
 	   document.getElementById("sensor").innerHTML=message.payloadString;
 	   }
 	else{
