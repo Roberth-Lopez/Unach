@@ -5,7 +5,7 @@ function LED1_On() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test1";
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
   
 }
@@ -13,7 +13,7 @@ function LED1_Off(){
 	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test1";
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
@@ -22,7 +22,7 @@ function boton_1(){
 	//alert("led off");
 	console.log("boton1");
 	message = new Paho.MQTT.Message("HOLA");
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test1";
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
@@ -54,10 +54,10 @@ function boton_1(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("ralopez.fie@unach.edu.ec/test");
+    client.subscribe("ralopez.fie@unach.edu.ec/test1");
     client.subscribe("ralopez.fie@unach.edu.ec/test2");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "ralopez.fie@unach.edu.ec/test1";
+    message.destinationName = "ralopez.fie@unach.edu.ec/test";
     client.send(message);
 	
   }
@@ -77,7 +77,7 @@ function boton_1(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	if(message.destinationName == "ralopez.fie@unach.edu.ec/test"){
+	if(message.destinationName == "ralopez.fie@unach.edu.ec/test1"){
 	   document.getElementById("sensor").innerHTML=message.payloadString;
 	   }
 	else{
