@@ -81,7 +81,7 @@ function boton_1(){
 	   document.getElementById("sensor").innerHTML=message.payloadString;
 	   }
 	else{
-	  document.getElementById("mensaje").innerHTML=message.payloadString;
+	  document.getElementById("historial").innerHTML=message.payloadString;
 	}
   }
   
