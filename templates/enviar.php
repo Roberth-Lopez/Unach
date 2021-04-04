@@ -1,4 +1,4 @@
-<enviar.php
+<?php
 $pin = $_POST['pin'];
 	message = new Paho.MQTT.Message($pin);
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
