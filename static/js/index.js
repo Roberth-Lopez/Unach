@@ -36,7 +36,7 @@ function boton_2(){
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
-function enviar(){	
+function enviar.php{	
 	$pin = $_POST['pin'];
 	message = new Paho.MQTT.Message($pin);
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
