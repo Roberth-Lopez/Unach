@@ -37,15 +37,6 @@ function boton_2(){
 }
 
 
-function enviar(){	
-	//alert("led off");
-	console.log("enviar");
-	message = new Paho.MQTT.Message(document.getElementById("pin").value);
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
-    	client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-}
-
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
