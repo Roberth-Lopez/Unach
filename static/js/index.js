@@ -27,6 +27,15 @@ function boton_1(){
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
+function boton_2(){	
+	//alert("led off");
+	console.log("boton2");
+	message = new Paho.MQTT.Message("Estado");
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
+}
+
 
 
 
@@ -56,6 +65,7 @@ function boton_1(){
 	
     client.subscribe("ralopez.fie@unach.edu.ec/test1");
     client.subscribe("ralopez.fie@unach.edu.ec/test2");
+    client.subscribe("ralopez.fie@unach.edu.ec/test3");
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "ralopez.fie@unach.edu.ec/test";
     client.send(message);
@@ -80,8 +90,11 @@ function boton_1(){
 	if(message.destinationName == "ralopez.fie@unach.edu.ec/test1"){
 	   document.getElementById("sensor").innerHTML=message.payloadString;
 	   }
-	else{
+	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historial").innerHTML=message.payloadString;
 	}
+	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test3"){
+	  document.getElementById("estado").innerHTML=message.payloadString;
+	}  
   }
   
