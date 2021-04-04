@@ -36,6 +36,14 @@ function boton_2(){
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
+function enviar(){	
+	$diametro = $_POST['pin'];
+	console.log("boton2");
+	message = new Paho.MQTT.Message("Estado");
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
+}
 
 
 // Create a client instance
