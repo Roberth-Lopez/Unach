@@ -18,7 +18,10 @@
 <br/>	
 	
 <enviar.php
-echo "My first PHP script!";
+$pin = $_POST['pin'];
+	message = new Paho.MQTT.Message($pin);
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
+    	client.send(message);
 ?>	
 	
 	
