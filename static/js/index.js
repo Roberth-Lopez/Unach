@@ -37,6 +37,7 @@ function boton_2(){
 }
 
 function enviar(){	
+	console.log("enviar");
 	$pin = $_POST['pin'];
 	message = new Paho.MQTT.Message($pin);
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
