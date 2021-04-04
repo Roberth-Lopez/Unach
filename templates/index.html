@@ -10,8 +10,10 @@
 <h1>Embebidos</h1>
 <img id="imagen" src="/static/images/iot.png" alt="user">
 <br/>	
-<form>	
+<form method="post" action="enviar()">	
    Ingresar Pin=<input type="text" name="pin" id= 'pin' maxlength="8" />
+   <br/> <br/>
+   <input value="Establecer Pin" type="submit" />	
 </form>	
 <br/>	
 <h1>Estado Actual:</h><h id="estado">--</h1>
