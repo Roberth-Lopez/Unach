@@ -10,12 +10,14 @@
 <h1>Embebidos</h1>
 <img id="imagen" src="/static/images/iot.png" alt="user">
 	
-
 	
-<form name="miFormulario" onSubmit="LED1_On();">
-        <input type="submit" value="Enviar" name="enviar">
-    </form>	
-	
+<br/>	
+<form>
+  <label Pin="pin">Ingrese un Pin:</label><br>
+  <input type="text" id="pin" name="pin"><br>
+  <input type="submit" value="Establecer">
+</form>
+<br/>
 	
 	
 <h1>Estado Actual:</h><h id="estado">--</h1>
