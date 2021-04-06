@@ -3,6 +3,17 @@
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
 <script src="/static/js/index.js"></script>
+	
+function envio(){
+	
+	var pin= document.getElementById('pin').value;
+	
+	document.pass.contra.value = pin;
+	
+	
+	}
+	
+	
 <title>EMBEBIDOS</title>
 </head>
 <body>
@@ -10,10 +21,14 @@
 <h1>Embebidos</h1>
 <img id="imagen" src="/static/images/iot.png" alt="user">
 	
-<form >
+<form name="pass">
 	<label Pin="pin">Ingrese un Pin:</label><br>
         <input type="text" id="pin" name="pin"><br>
-        <input type="submit" value="Enviar" name="enviar" onclick="enviar()">
+        <input type="button" value="Enviar" name="enviar" onclick="envio()">
+	
+	
+	Nombre:<input type="text" id="contra" name="contra"><br>
+	
     </form>
 
 
