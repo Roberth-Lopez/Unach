@@ -152,8 +152,8 @@ function enviar(){
 	if(message.destinationName == "ralopez.fie@unach.edu.ec/test5"){
 		
         document.getElementById("hora").innerHTML=Mensaje.split(" ")[1];
-        document.getElementById("minuto").innerHTML=Mensaje.split(" ")[2];
-        document.getElementById("segundo").innerHTML=Mensaje.split(" ")[4];	
+        document.getElementById("minuto").innerHTML=Mensaje.split(" ")[3];
+        document.getElementById("segundo").innerHTML=Mensaje.split(" ")[5];	
 	
 	}	  
   }
