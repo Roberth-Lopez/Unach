@@ -134,8 +134,17 @@ function enviar(){
 	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historial").innerHTML=message.payloadString;
 	}
-	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test3"){
-	  document.getElementById("estado").innerHTML=message.payloadString;
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Encendido") ){
+	  document.getElementById("estado1").innerHTML=message.payloadString;
+	}
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Encendido") ){
+	  document.getElementById("estado2").innerHTML=message.payloadString;
 	}  
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Apagado") ){
+	  document.getElementById("estado1").innerHTML=message.payloadString;
+	}  
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Apagado") ){
+	  document.getElementById("estado2").innerHTML=message.payloadString;
+	}    
   }
   
