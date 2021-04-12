@@ -118,9 +118,19 @@ function enviar(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	if(message.destinationName == "ralopez.fie@unach.edu.ec/test1"){
-	   document.getElementById("sensor").innerHTML=message.payloadString;
+    Mensaje=message.payloadString;
+	if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Encendido") ){
+	   document.getElementById("sensor1").innerHTML=message.payloadString;
 	   }
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Encendido") ){
+	   document.getElementById("sensor2").innerHTML=message.payloadString;
+	   }
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Apagado") ){
+	   document.getElementById("sensor1").innerHTML=message.payloadString;
+	   }
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Apagado") ){
+	   document.getElementById("sensor2").innerHTML=message.payloadString;
+	   }  
 	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historial").innerHTML=message.payloadString;
 	}
