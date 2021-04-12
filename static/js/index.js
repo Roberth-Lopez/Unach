@@ -120,10 +120,41 @@ function enviar(){
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
     Mensaje=message.payloadString;
-	
-        document.getElementById("hora").innerHTML=Mensaje.split(" ")[0];
+	  
+	if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Encendido") ){
+	   document.getElementById("sensor1").innerHTML=message.payloadString;
+	   }
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Encendido") ){
+	   document.getElementById("sensor2").innerHTML=message.payloadString;
+	   }
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Apagado") ){
+	   document.getElementById("sensor1").innerHTML=message.payloadString;
+	   }
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Apagado") ){
+	   document.getElementById("sensor2").innerHTML=message.payloadString;
+	   }  
+	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
+	  document.getElementById("historial").innerHTML=message.payloadString;
+	}
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Encendido") ){
+	  document.getElementById("estado1").innerHTML=message.payloadString;
+	}
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Encendido") ){
+	  document.getElementById("estado2").innerHTML=message.payloadString;
+	}  
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Apagado") ){
+	  document.getElementById("estado1").innerHTML=message.payloadString;
+	}  
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Apagado") ){
+	  document.getElementById("estado2").innerHTML=message.payloadString;
+	}
+
+	if(message.destinationName == "ralopez.fie@unach.edu.ec/test5"){
+		
+        document.getElementById("hora").innerHTML=Mensaje.split(" ")[1];
         document.getElementById("minuto").innerHTML=Mensaje.split(" ")[2];
         document.getElementById("segundo").innerHTML=Mensaje.split(" ")[4];	
-	   
+	
+	}	  
   }
   
