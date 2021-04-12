@@ -97,6 +97,7 @@ function enviar(){
     client.subscribe("ralopez.fie@unach.edu.ec/test1");
     client.subscribe("ralopez.fie@unach.edu.ec/test2");
     client.subscribe("ralopez.fie@unach.edu.ec/test3");
+    client.subscribe("ralopez.fie@unach.edu.ec/test5");	  
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "ralopez.fie@unach.edu.ec/test";
     client.send(message);
@@ -145,6 +146,11 @@ function enviar(){
 	}  
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Apagado") ){
 	  document.getElementById("estado2").innerHTML=message.payloadString;
+	}
+	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test5"){
+	  document.getElementById("hora").innerHTML=message.split("")[0];
+	  document.getElementById("minuto").innerHTML=message.split("")[2];
+	  document.getElementById("segundo").innerHTML=message.split("")[4];	
 	}    
   }
   
