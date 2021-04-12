@@ -2,35 +2,60 @@
 
 function LED1_On() {
 	//alert("led on");
-	console.log("led on");
+	console.log("led 1 on");
 	//document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("Encender");
+	message = new Paho.MQTT.Message("Encender1");
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
+    	client.send(message);
+  
+}
+function LED2_On() {
+	//alert("led on");
+	console.log("led 2 on");
+	//document.getElementById("sensor").innerHTML="led on";
+	message = new Paho.MQTT.Message("Encender2");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
   
 }
 function LED1_Off(){	
 	//alert("led off");
-	console.log("led off");
-	message = new Paho.MQTT.Message("Apagar");
+	console.log("led 1 off");
+	message = new Paho.MQTT.Message("Apagar1");
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
+}
+function LED2_Off(){	
+	//alert("led off");
+	console.log("led 2 off");
+	message = new Paho.MQTT.Message("Apagar2");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
-function boton_1(){	
+function Historial_1(){	
 	//alert("led off");
-	console.log("boton1");
+	console.log("historial1");
 	message = new Paho.MQTT.Message("Historial");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
-function boton_2(){	
+function Estado_1(){	
 	//alert("led off");
-	console.log("boton2");
-	message = new Paho.MQTT.Message("Estado");
+	console.log("estado1");
+	message = new Paho.MQTT.Message("Estado1");
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
+}
+function Estado_2(){	
+	//alert("led off");
+	console.log("estado2");
+	message = new Paho.MQTT.Message("Estado2");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
