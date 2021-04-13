@@ -63,7 +63,7 @@ function Estado_2(){
 
 function enviar(){	
 	console.log("prueba");
-	message = new Paho.MQTT.Message("pin"+document.getElementById('pin').value);
+	message = new Paho.MQTT.Message("pin1"+document.getElementById('pin').value);
     	message.destinationName = "ralopez.fie@unach.edu.ec/test4";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
