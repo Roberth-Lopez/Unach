@@ -65,7 +65,7 @@ function enviar(){
 	console.log("prueba");
 	message = new Paho.MQTT.Message(document.getElementById('pin').value);
     	message.destinationName = "ralopez.fie@unach.edu.ec/test4";
-    	client.send("pin"+message);
+    	client.send("pin" + message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
