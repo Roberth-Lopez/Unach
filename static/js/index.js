@@ -141,9 +141,13 @@ function enviar_2(){
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Apagado") ){
 	   document.getElementById("sensor2").innerHTML=message.payloadString;
 	   }  
+	  
+	  
 	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historial").innerHTML=message.payloadString;
 	}
+	  
+	  
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Encendido") ){
 	  document.getElementById("estado1").innerHTML=message.payloadString;
 	}
@@ -154,8 +158,23 @@ function enviar_2(){
 	  document.getElementById("estado1").innerHTML=message.payloadString;
 	}  
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Apagado") ){
-	  document.getElementById("estado2").innerHTML=message.payloadString;
+	  document.getElementById("estado2").innerHTML=message.payloadString;	
 	}
+	  
+	  
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 1 Encendido") ){
+	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
+	}
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 2 Encendido") ){
+	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
+	}  
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 1 Apagado") ){
+	  document.getElementById("estado_piin1").innerHTML=message.payloadString;
+	} 
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 2 Apagado") ){
+	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
+	}   
+	  
 
 	if(message.destinationName == "ralopez.fie@unach.edu.ec/test5"){
 		
