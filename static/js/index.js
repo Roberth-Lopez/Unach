@@ -38,54 +38,27 @@ function LED2_Off(){
 //---------------------------------------------------------------------------------------------------
 
 
-//----------------------------función para el Historial-----------------------------------------------
+//----------------------------función para el Historial 1-----------------------------------------------
 function Historial_1(){	
 	//alert("led off");
 	console.log("historial1");
-	message = new Paho.MQTT.Message("Historial");
+	message = new Paho.MQTT.Message("Historial1");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 //---------------------------------------------------------------------------------------------------
-
-//-------------------------------Función para indicar los Estados------------------------------------
-function Estado_1(){	
+//----------------------------función para el Historial 2-----------------------------------------------
+function Historial_2(){	
 	//alert("led off");
-	console.log("estado1");
-	message = new Paho.MQTT.Message("Estado1");
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test";
-    	client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-}
-function Estado_2(){	
-	//alert("led off");
-	console.log("estado2");
-	message = new Paho.MQTT.Message("Estado2");
+	console.log("historial2");
+	message = new Paho.MQTT.Message("Historial2");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 //---------------------------------------------------------------------------------------------------
 
-
-//-------------------------------Función para Enviar las contraseñas------------------------------------------
-function enviar_1(){	
-	console.log("PIN1");
-	message = new Paho.MQTT.Message(document.getElementById('pin1').value);
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test4";
-    	client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-}
-
-function enviar_2(){	
-	console.log("PIN2");
-	message = new Paho.MQTT.Message(document.getElementById('pin2').value);
-    	message.destinationName = "ralopez.fie@unach.edu.ec/test6";
-    	client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-}
-//---------------------------------------------------------------------------------------------------
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -158,64 +131,20 @@ function enviar_2(){
  //---------------------------------------------------------------------------------------------------------------------------------	
 
 	  
- //----------------------------------------Sección Para mensajes de Historial--------------------------------------------------------	
+ //----------------------------------------Sección Para mensajes de Historial 1--------------------------------------------------------	
 	  
 	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
-	  document.getElementById("historial").innerHTML=message.payloadString;
+	  document.getElementById("historiall_1").innerHTML=message.payloadString;
 	}
 //------------------------------------------------------------------------------------------------------------------------------------------  
 	  
+//----------------------------------------Sección Para mensajes de Historial 2--------------------------------------------------------	
 	  
-//----------------------------------------Sección Para mensajes de Estado Actual-------------------------------------------------------------	  
-	  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Encendido") ){
-	  document.getElementById("estado1").innerHTML=message.payloadString;
+	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test3"){
+	  document.getElementById("historiall_2").innerHTML=message.payloadString;
 	}
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Encendido") ){
-	  document.getElementById("estado2").innerHTML=message.payloadString;
-	}  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Apagado") ){
-	  document.getElementById("estado1").innerHTML=message.payloadString;
-	}  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Apagado") ){
-	  document.getElementById("estado2").innerHTML=message.payloadString;	
-	}
-//----------------------------------------------------------------------------------------------------------------------------------------------
-	  
-	  
-	  
-//----------------------------------------Sección Para mensajes de Contraseñas----------------------------------------------------------------
-	  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == ".Led 1 Encendido") ){
-	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
-	}
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == ".Led 2 Encendido") ){
-	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
-	}  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == ".Led 1 Apagado") ){
-	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
-	} 
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == ".Led 2 Apagado") ){
-	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
-	}
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "El pin es incorrecto") ){
-	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
-	  document.getElementById("estado_pin2").innerHTML=message.payloadString;	
-	}   
-	
-//--------------------------------------------------------------------------------------------------------------------------------------  
-	  
-	  
-//-----------------------------------------------Sección Para mensajes de la Hora--------------------------------------------------------  
-
-	if(message.destinationName == "ralopez.fie@unach.edu.ec/test5"){
-		
-        document.getElementById("hora").innerHTML=Mensaje.split(" ")[4];
-        document.getElementById("minuto").innerHTML=Mensaje.split(" ")[6];
-        document.getElementById("segundo").innerHTML=Mensaje.split(" ")[8];	
-	
-	}
-//--------------------------------------------------------------------------------------------------------------------------------------    
+//------------------------------------------------------------------------------------------------------------------------------------------ 	  
+   
   }
   
 //----------------------------------------------------------------------------------------------------------------------------------------
