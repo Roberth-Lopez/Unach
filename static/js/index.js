@@ -174,7 +174,7 @@ function enviar_2(){
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == ".Led 2 Apagado") ){
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
 	}
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "La contraseña es incorrecta") ){
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "El pin es incorrecto") ){
 	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;	
 	}   
