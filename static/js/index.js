@@ -1,5 +1,6 @@
 //https://www.eclipse.org/paho/clients/js/
 
+//-------------------------función para encender o apagar los leds-----------------------------------
 function LED1_On() {
 	//alert("led on");
 	console.log("led1on");
@@ -34,7 +35,10 @@ function LED2_Off(){
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
+//---------------------------------------------------------------------------------------------------
 
+
+//----------------------------función para el Historial-----------------------------------------------
 function Historial_1(){	
 	//alert("led off");
 	console.log("historial1");
@@ -43,7 +47,9 @@ function Historial_1(){
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
+//---------------------------------------------------------------------------------------------------
 
+//-------------------------------Función para indicar los Estados------------------------------------
 function Estado_1(){	
 	//alert("led off");
 	console.log("estado1");
@@ -60,7 +66,10 @@ function Estado_2(){
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
+//---------------------------------------------------------------------------------------------------
 
+
+//-------------------------------Función para Enviar las contraseñas------------------------------------------
 function enviar_1(){	
 	console.log("PIN1");
 	message = new Paho.MQTT.Message(document.getElementById('pin1').value);
@@ -76,7 +85,7 @@ function enviar_2(){
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
-
+//---------------------------------------------------------------------------------------------------
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -124,11 +133,16 @@ function enviar_2(){
     }
   }
 
+
+
+//----------------------------------------------Mensajes Recividos-----------------------------------------------
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
     Mensaje=message.payloadString;
+
 	  
+//----------------------------------------Sección Para mensajes de encendido y apagado--------------------------------------------------------	  
 	if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Encendido") ){
 	   document.getElementById("sensor1").innerHTML=message.payloadString;
 	   }
@@ -141,12 +155,18 @@ function enviar_2(){
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Apagado") ){
 	   document.getElementById("sensor2").innerHTML=message.payloadString;
 	   }  
+ //---------------------------------------------------------------------------------------------------------------------------------	
+
 	  
+ //----------------------------------------Sección Para mensajes de Historial--------------------------------------------------------	
 	  
 	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historial").innerHTML=message.payloadString;
 	}
+//------------------------------------------------------------------------------------------------------------------------------------------  
 	  
+	  
+//----------------------------------------Sección Para mensajes de Estado Actual-------------------------------------------------------------	  
 	  
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 1 Encendido") ){
 	  document.getElementById("estado1").innerHTML=message.payloadString;
@@ -160,7 +180,11 @@ function enviar_2(){
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "Led 2 Apagado") ){
 	  document.getElementById("estado2").innerHTML=message.payloadString;	
 	}
+//----------------------------------------------------------------------------------------------------------------------------------------------
 	  
+	  
+	  
+//----------------------------------------Sección Para mensajes de Contraseñas----------------------------------------------------------------
 	  
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == ".Led 1 Encendido") ){
 	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
@@ -179,6 +203,10 @@ function enviar_2(){
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;	
 	}   
 	
+//--------------------------------------------------------------------------------------------------------------------------------------  
+	  
+	  
+//-----------------------------------------------Sección Para mensajes de la Hora--------------------------------------------------------  
 
 	if(message.destinationName == "ralopez.fie@unach.edu.ec/test5"){
 		
@@ -186,6 +214,8 @@ function enviar_2(){
         document.getElementById("minuto").innerHTML=Mensaje.split(" ")[6];
         document.getElementById("segundo").innerHTML=Mensaje.split(" ")[8];	
 	
-	}	  
+	}
+//--------------------------------------------------------------------------------------------------------------------------------------    
   }
   
+\\----------------------------------------------------------------------------------------------------------------------------------------
