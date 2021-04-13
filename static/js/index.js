@@ -61,9 +61,17 @@ function Estado_2(){
 	//document.getElementById("sensor").innerHTML="led off";
 }
 
-function enviar(){	
-	console.log("prueba");
-	message = new Paho.MQTT.Message("pin1"+document.getElementById('pin').value);
+function enviar_1(){	
+	console.log("PIN1");
+	message = new Paho.MQTT.Message(document.getElementById('pin1').value);
+    	message.destinationName = "ralopez.fie@unach.edu.ec/test4";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
+}
+
+function enviar_2(){	
+	console.log("PIN2");
+	message = new Paho.MQTT.Message("pin"+document.getElementById('pin2').value);
     	message.destinationName = "ralopez.fie@unach.edu.ec/test4";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
