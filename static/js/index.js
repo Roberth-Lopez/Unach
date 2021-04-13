@@ -117,20 +117,6 @@ function Historial_2(){
     Mensaje=message.payloadString;
 
 	  
-//----------------------------------------Sección Para mensajes de encendido y apagado--------------------------------------------------------	  
-	if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Encendido") ){
-	   document.getElementById("sensor1").innerHTML=message.payloadString;
-	   }
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Encendido") ){
-	   document.getElementById("sensor2").innerHTML=message.payloadString;
-	   }
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 1 Apagado") ){
-	   document.getElementById("sensor1").innerHTML=message.payloadString;
-	   }
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test1") && (Mensaje == "Led 2 Apagado") ){
-	   document.getElementById("sensor2").innerHTML=message.payloadString;
-	   }  
- //---------------------------------------------------------------------------------------------------------------------------------	
 
 	  
  //----------------------------------------Sección Para mensajes de Historial 1--------------------------------------------------------	
