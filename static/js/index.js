@@ -169,7 +169,7 @@ function enviar_2(){
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
 	}  
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 1 Apagado") ){
-	  document.getElementById("estado_piin1").innerHTML=message.payloadString;
+	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
 	} 
 	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 2 Apagado") ){
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
