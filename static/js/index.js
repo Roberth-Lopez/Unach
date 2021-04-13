@@ -162,19 +162,19 @@ function enviar_2(){
 	}
 	  
 	  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 1 Encendido") ){
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "+Led 1 Encendido") ){
 	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
 	}
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 2 Encendido") ){
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "+Led 2 Encendido") ){
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
 	}  
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 1 Apagado") ){
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "+Led 1 Apagado") ){
 	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
 	} 
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "Led 2 Apagado") ){
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "+Led 2 Apagado") ){
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;
 	}
-	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test2") && (Mensaje == "La contraseña es incorrecta") ){
+	else if((message.destinationName == "ralopez.fie@unach.edu.ec/test3") && (Mensaje == "La contraseña es incorrecta") ){
 	  document.getElementById("estado_pin1").innerHTML=message.payloadString;
 	  document.getElementById("estado_pin2").innerHTML=message.payloadString;	
 	}   
