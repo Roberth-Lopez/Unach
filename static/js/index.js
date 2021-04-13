@@ -119,7 +119,7 @@ function Historial_2(){
 	  
  //----------------------------------------Sección Para mensajes de Historial 1--------------------------------------------------------	
 	  
-	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
+	if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historiall_1").innerHTML=message.payloadString;
 	}
 	 
