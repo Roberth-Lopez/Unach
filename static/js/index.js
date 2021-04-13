@@ -41,17 +41,19 @@ function LED2_Off(){
 //----------------------------función para el Historial 1-----------------------------------------------
 function Historial_1(){	
 	//alert("led off");
-	console.log("historial1");
+	console.log("historial2");
 	message = new Paho.MQTT.Message("Historial1");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 //---------------------------------------------------------------------------------------------------
+
+
 //----------------------------función para el Historial 2-----------------------------------------------
 function Historial_2(){	
 	//alert("led off");
-	console.log("historial2");
+	console.log("historial3");
 	message = new Paho.MQTT.Message("Historial2");
     	message.destinationName = "ralopez.fie@unach.edu.ec/test";
     	client.send(message);
@@ -136,6 +138,7 @@ function Historial_2(){
 	else if(message.destinationName == "ralopez.fie@unach.edu.ec/test2"){
 	  document.getElementById("historiall_1").innerHTML=message.payloadString;
 	}
+	 
 //------------------------------------------------------------------------------------------------------------------------------------------  
 	  
 //----------------------------------------Sección Para mensajes de Historial 2--------------------------------------------------------	
